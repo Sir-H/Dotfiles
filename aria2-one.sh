@@ -2,7 +2,7 @@
 
 SRC=$3
 
-downloadpath='/网站地址/down/'
+downloadpath='/root/Download/'
 cd $downloadpath
 if [ "$2" == "0" ]; then
 	echo $1'没有文件'$SRC>> upload.log
@@ -15,6 +15,6 @@ find "$SRC" -regextype posix-extended -regex ".*\.(chm|torrent|htm|html|url|nfo|
 path=${SRC##*$downloadpath}
 echo $1'准备上传'$path>> upload.log
 cd $downloadpath
-bash upload.sh $path
+bash /root/upload.sh $path
 exit $3
 fi
